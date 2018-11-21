@@ -1,0 +1,78 @@
+version: "3.2"
+
+services:
+  php-fpm:
+    build:
+      context: ./services/php
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./www:/data/www:rw
+      - ./services/php/conf.d/php.ini:/usr/local/etc/php/php.ini:ro
+      - ./services/php/conf.d/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro
+      - ./services/php/php-fpm/logs:/var/log/php-fpm:rw
+    networks:
+      - back-network
+      - font-network
+    depends_on:
+      - mysql
+      - redis
+    restart: always
+    command: php-fpm
+
+  nginx:
+    build:
+      context: ./services/nginx
+      dockerfile: Dockerfile
+    depends_on:
+      - php-fpm
+    volumes:
+      - ./www:/data/www:rw
+      - ./services/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./services/nginx/logs:/var/log/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - font-network
+    restart: always
+    command: nginx -g 'daemon off;'
+
+  mysql:
+    build:
+      context: ./services/mysql
+      dockerfile: Dockerfile
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./services/mysql/data:/var/lib/mysql:rw
+      - ./services/mysql/logs:/var/lib/mysql-logs:rw
+      - ./services/mysql/conf.d:/etc/mysql/conf.d:ro
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: docker_test
+      MYSQL_USER: tumi
+      MYSQL_PASSWORD: tumi
+    networks:
+      - back-network
+    restart: always
+    command: "--character-set-server=utf8mb4"
+
+  redis:
+    build:
+      context: ./services/redis
+      dockerfile: Dockerfile
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./services/redis/data:/data
+    networks:
+      - back-network
+    restart: always
+networks:
+  font-network:
+    driver: bridge
+  back-network:
+    driver: bridge
