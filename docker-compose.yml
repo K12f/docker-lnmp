@@ -10,7 +10,7 @@ services:
     volumes:
       - ./www:/data/www:rw
       - ./services/php/conf.d/php.ini:/usr/local/etc/php/php.ini:ro
-      - ./services/php/conf.d/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro
+      - ./services/php/conf.d/php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf:ro
       - ./services/php/php-fpm/logs:/var/log/php-fpm:rw
     networks:
       - back-network
