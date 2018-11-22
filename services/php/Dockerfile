@@ -1,5 +1,6 @@
-FROM php:${PHP_VERSION}-fpm
+FROM php:7.2-fpm
 
+ENV PHP_REDIS_VERSION=4.0.0
 
 ENV TZ=${TIME_ZONE}
 
@@ -15,11 +16,10 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-install opcache \
         && docker-php-ext-install mysqli \
         && docker-php-ext-install bcmath \
-        && docker-php-ext-install mbstring \
         && docker-php-ext-install sockets \
-        && docker-php-ext-install sockets \
-        && pecl install redis
-        && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
+        && pecl install redis-${PHP_REDIS_VERSION} \
+        && docker-php-ext-enable redis  \
+        && rm -rf /tmp/pear \
         && rm -r /var/lib/apt/lists/*
 
  # Install Composer

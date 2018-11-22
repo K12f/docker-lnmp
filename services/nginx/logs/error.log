@@ -73,3 +73,266 @@
 2018/11/22 00:52:24 [error] 7#7: *13 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 192.168.128.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "http://127.0.0.1/index.php"
 2018/11/22 00:52:26 [error] 7#7: *14 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 192.168.128.1, server: localhost, request: "GET /index.html HTTP/1.1", host: "127.0.0.1"
 2018/11/22 00:52:26 [error] 7#7: *15 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 192.168.128.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "http://127.0.0.1/index.html"
+2018/11/22 07:25:56 [error] 6#6: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'tumi', 'tumi')
+#1 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'tumi', 'tumi')
+#1 {main}
+  thrown in /data/www/db.php on line 7" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /db.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:26:14 [error] 6#6: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'tumi', 'tumi')
+#1 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'tumi', 'tumi')
+#1 {main}
+  thrown in /data/www/db.php on line 7" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /db.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:26:14 [error] 6#6: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'tumi', 'tumi')
+#1 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'tumi', 'tumi')
+#1 {main}
+  thrown in /data/www/db.php on line 7" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /db.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:26:15 [error] 6#6: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'test', 'test')
+#1 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'test', 'test')
+#1 {main}
+  thrown in /data/www/db.php on line 7" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /db.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:14 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:3
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:16 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:3
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:17 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:3
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:17 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:3
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:17 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:3
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:18 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:3
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:18 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:3
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:18 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:3
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:34 [error] 6#6: *29 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:34 [error] 6#6: *29 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:35 [error] 6#6: *29 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:35 [error] 6#6: *29 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:36 [error] 6#6: *29 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:38 [error] 6#6: *36 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:39 [error] 6#6: *36 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:39 [error] 6#6: *36 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:27:40 [error] 6#6: *36 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:31:43 [error] 6#6: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:31:44 [error] 6#6: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:31:45 [error] 6#6: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:31:46 [error] 6#6: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:31:47 [error] 6#6: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:31:47 [error] 6#6: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:31:47 [error] 6#6: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:31:47 [error] 6#6: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:38:25 [error] 6#6: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'test', 'test')
+#1 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known in /data/www/db.php:7
+Stack trace:
+#0 /data/www/db.php(7): PDO->__construct('mysql:host=back...', 'test', 'test')
+#1 {main}
+  thrown in /data/www/db.php on line 7" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /db.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:38:42 [error] 6#6: *4 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.21.0.2:9000", host: "localhost:8888"
+2018/11/22 07:41:02 [error] 6#6: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.23.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.23.0.2:9000", host: "localhost:8888"
+2018/11/22 07:41:03 [error] 6#6: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.23.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.23.0.2:9000", host: "localhost:8888"
+2018/11/22 07:57:16 [error] 6#6: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:57:16 [error] 6#6: *2 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "localhost:8888"
+2018/11/22 07:57:16 [error] 6#6: *1 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:57:17 [error] 6#6: *4 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:57:17 [error] 6#6: *4 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:57:18 [error] 6#6: *5 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:57:18 [error] 6#6: *5 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:57:18 [error] 6#6: *7 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:57:18 [error] 6#6: *11 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:57:18 [error] 6#6: *12 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:57:18 [error] 6#6: *12 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:57:18 [error] 6#6: *13 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:57:19 [error] 6#6: *13 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:01 [error] 6#6: *17 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:58:02 [error] 6#6: *17 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:02 [error] 6#6: *18 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:58:02 [error] 6#6: *18 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:02 [error] 6#6: *20 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:58:02 [error] 6#6: *20 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:02 [error] 6#6: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:58:03 [error] 6#6: *23 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:04 [error] 6#6: *24 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 07:58:05 [error] 6#6: *26 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 07:58:05 [error] 6#6: *27 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:06 [error] 6#6: *29 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:58:06 [error] 6#6: *29 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:07 [error] 6#6: *30 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 07:58:07 [error] 6#6: *32 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 07:58:08 [error] 6#6: *33 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/index.php"
+2018/11/22 07:58:09 [error] 6#6: *36 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 07:58:09 [error] 6#6: *37 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:10 [error] 6#6: *38 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:58:10 [error] 6#6: *38 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 07:58:10 [error] 6#6: *39 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Redis' not found in /data/www/redis.php:4
+Stack trace:
+#0 {main}
+  thrown in /data/www/redis.php on line 4" while reading response header from upstream, client: 172.26.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.26.0.2:9000", host: "localhost:8888"
+2018/11/22 07:58:10 [error] 6#6: *39 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 09:05:37 [error] 9#9: *1 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "localhost:8888"
+2018/11/22 09:05:37 [error] 9#9: *2 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught RedisException: Connection refused in /data/www/redis.php:5
+Stack trace:
+#0 /data/www/redis.php(5): Redis->connect('redis', 6379)
+#1 {main}
+  thrown in /data/www/redis.php on line 5" while reading response header from upstream, client: 172.28.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.28.0.2:9000", host: "localhost:8888"
+2018/11/22 09:05:37 [error] 9#9: *2 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 09:05:38 [error] 9#9: *4 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 09:05:40 [error] 9#9: *5 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 09:05:41 [error] 9#9: *6 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/index.php"
+2018/11/22 09:05:42 [error] 9#9: *8 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/index.php"
+2018/11/22 09:05:42 [error] 9#9: *9 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 09:05:42 [error] 9#9: *11 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 09:05:44 [error] 9#9: *12 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught RedisException: Connection refused in /data/www/redis.php:5
+Stack trace:
+#0 /data/www/redis.php(5): Redis->connect('redis', 6379)
+#1 {main}
+  thrown in /data/www/redis.php on line 5" while reading response header from upstream, client: 172.28.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.28.0.2:9000", host: "localhost:8888"
+2018/11/22 09:06:07 [error] 9#9: *12 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught RedisException: Connection refused in /data/www/redis.php:5
+Stack trace:
+#0 /data/www/redis.php(5): Redis->connect('redis', 6379)
+#1 {main}
+  thrown in /data/www/redis.php on line 5" while reading response header from upstream, client: 172.28.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.28.0.2:9000", host: "localhost:8888"
+2018/11/22 09:06:07 [error] 9#9: *12 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 09:06:31 [error] 9#9: *16 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught RedisException: Connection refused in /data/www/redis.php:5
+Stack trace:
+#0 /data/www/redis.php(5): Redis->connect('redis', 6379)
+#1 {main}
+  thrown in /data/www/redis.php on line 5" while reading response header from upstream, client: 172.28.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.28.0.2:9000", host: "localhost:8888"
+2018/11/22 09:06:32 [error] 9#9: *16 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 09:18:51 [error] 6#6: *2 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 09:18:52 [error] 6#6: *4 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "localhost:8888"
+2018/11/22 09:18:53 [error] 6#6: *5 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/index.php"
+2018/11/22 09:18:54 [error] 6#6: *6 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/index.php"
+2018/11/22 09:18:54 [error] 6#6: *7 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 09:18:55 [error] 6#6: *9 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 09:18:56 [error] 6#6: *10 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/db.php"
+2018/11/22 09:19:19 [error] 6#6: *12 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught RedisException: Connection refused in /data/www/redis.php:5
+Stack trace:
+#0 /data/www/redis.php(5): Redis->connect('redis', 6379)
+#1 {main}
+  thrown in /data/www/redis.php on line 5" while reading response header from upstream, client: 172.28.0.1, server: localhost, request: "GET /redis.php HTTP/1.1", upstream: "fastcgi://172.28.0.2:9000", host: "localhost:8888"
+2018/11/22 09:19:19 [error] 6#6: *12 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 09:21:48 [error] 9#9: *1 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
+2018/11/22 09:21:50 [error] 9#9: *2 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/redis.php"
