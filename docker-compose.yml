@@ -1,18 +1,17 @@
-env_file:
-  - .env
-version: "${VERSION}"
+version: "3.0"
+
 services:
   php-fpm:
     build:
-      context: ${ROOT_PATH}/php
+      context: ${SERVICE_PATH}/php
       dockerfile: Dockerfile
     ports:
       - "9000:9000"
     volumes:
-      - ${PHP_WWW_DIR}:/data/www:rw
-      - ${PHP_CONF_INI_FILE}:/usr/local/etc/php/php.ini:ro
-      - ${PHP_FPM_CONF_FILE}:/usr/local/etc/php-fpm.d/www.conf:ro
-      - ${PHP_LOG_DIR}:/var/log/php-fpm:rw
+      - ${SERVICE_PATH}${PHP_WWW_DIR}:/data/www:rw
+      - ${SERVICE_PATH}${PHP_CONF_INI_FILE}:/usr/local/etc/php/php.ini:ro
+      - ${SERVICE_PATH}${PHP_FPM_CONF_FILE}:/usr/local/etc/php-fpm.d/www.conf:ro
+      - ${SERVICE_PATH}${PHP_LOG_DIR}:/var/log/php-fpm:rw
     networks:
       - back-network
       - font-network
@@ -24,15 +23,15 @@ services:
 
   nginx:
     build:
-      context: ${ROOT_PATH}/nginx
+      context: ${SERVICE_PATH}/nginx
       dockerfile: Dockerfile
     depends_on:
       - php-fpm
     volumes:
-      - ${NGINX_WWW_DIR}:/data/www:rw
-      - ${NGINX_CONF_DIR}:/etc/nginx/conf.d:ro
-      - ${NGINX_CONF_FILE}:/etc/nginx/nginx.conf:ro
-      - ${NGINX_LOG_DIR}:/var/log/nginx
+      - ${SERVICE_PATH}${NGINX_WWW_DIR}:/data/www:rw
+      - ${SERVICE_PATH}${NGINX_CONF_DIR}:/etc/nginx/conf.d:ro
+      - ${SERVICE_PATH}${NGINX_CONF_FILE}:/etc/nginx/nginx.conf:ro
+      - ${SERVICE_PATH}${NGINX_LOG_DIR}:/var/log/nginx
     ports:
       - "${NGINX_HTTP_HOST_PORT}:80"
       - "${NGINX_HTTPS_HOST_PORT}:443"
@@ -43,14 +42,14 @@ services:
 
   mysql:
     build:
-      context: ${ROOT_PATH}/mysql
+      context: ${SERVICE_PATH}/mysql
       dockerfile: Dockerfile
     ports:
       - "${MYSQL_HOST_PORT}:3306"
     volumes:
-      - ${MYSQL_DATA_DIR}:/var/lib/mysql:rw
-      - ${MYSQL_LOG_DIR}:/var/log/mysql:rw
-      - ${MYSQL_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf:ro
+      - ${SERVICE_PATH}${MYSQL_DATA_DIR}:/var/lib/mysql:rw
+      - ${SERVICE_PATH}${MYSQL_LOG_DIR}:/var/log/mysql:rw
+      - ${SERVICE_PATH}${MYSQL_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf:ro
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -63,14 +62,14 @@ services:
 
   redis:
     build:
-      context: ${ROOT_PATH}/redis
+      context: ${SERVICE_PATH}/redis
       dockerfile: Dockerfile
     ports:
       - "${REDIS_HOST_PORT}:6379"
     volumes:
-      - ${REDIS_DATA_DIR}:/data
-      - ${REDIS_CONF_FILE}:/usr/local/etc/redis/redis.conf
-      - ${REDIS_LOG_DIR}:/var/log/redis
+      - ${SERVICE_PATH}${REDIS_DATA_DIR}:/data
+      - ${SERVICE_PATH}${REDIS_CONF_FILE}:/usr/local/etc/redis/redis.conf
+      - ${SERVICE_PATH}${REDIS_LOG_DIR}:/var/log/redis
     networks:
       - back-network
     restart: always
