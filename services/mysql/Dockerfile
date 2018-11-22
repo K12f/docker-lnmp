@@ -1,4 +1,4 @@
-FROM mysql:5.7
+FROM mysql:${MYSQL_VERSION}
 
 # set timezome
-ENV TZ=Asia/Shanghai
+ENV TZ=${TIME_ZONE}

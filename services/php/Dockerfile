@@ -1,7 +1,7 @@
-FROM php:7.2-fpm
+FROM php:${PHP_VERSION}-fpm
 
 
-ENV TZ=Asia/Shanghai
+ENV TZ=${TIME_ZONE}
 
 RUN apt-get update && apt-get install -y \
         git \
@@ -14,7 +14,12 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-install pdo_mysql \
         && docker-php-ext-install opcache \
         && docker-php-ext-install mysqli \
-       # && pecl install redis && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
+        && docker-php-ext-install bcmath \
+        && docker-php-ext-install mbstring \
+        && docker-php-ext-install sockets \
+        && docker-php-ext-install sockets \
+        && pecl install redis
+        && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
         && rm -r /var/lib/apt/lists/*
 
  # Install Composer
