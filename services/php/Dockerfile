@@ -16,9 +16,13 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-install opcache \
         && docker-php-ext-install mysqli \
         && docker-php-ext-install bcmath \
+        && docker-php-ext-install pthread \
+        && docker-php-ext-install pcntl \
         && docker-php-ext-install sockets \
         && pecl install redis-${PHP_REDIS_VERSION} \
         && docker-php-ext-enable redis  \
+        && docker-php-ext-enable pthread  \
+        && docker-php-ext-enable pcntl  \
         && rm -rf /tmp/pear \
         && rm -r /var/lib/apt/lists/*
 
