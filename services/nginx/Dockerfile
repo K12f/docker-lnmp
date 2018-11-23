@@ -1,4 +1,4 @@
-FROM nginx:1.15
+FROM nginx:alpine
 
 # set timezome
 ENV TZ=${TIME_ZONE}
