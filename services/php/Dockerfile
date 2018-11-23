@@ -16,12 +16,19 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-install opcache \
         && docker-php-ext-install mysqli \
         && docker-php-ext-install bcmath \
-        && docker-php-ext-install pthread \
-        && docker-php-ext-install pcntl \
         && docker-php-ext-install sockets \
         && pecl install redis-${PHP_REDIS_VERSION} \
         && docker-php-ext-enable redis  \
-        && docker-php-ext-enable pthread  \
+         && git clone https://github.com/krakjoe/pthreads.git && \
+           ( \
+               cd pthreads && \
+               phpize && \
+               ./configure --enable-pthreads && \
+               make -j$(nproc) && \
+               make install \
+           ) && \
+           rm -r pthreads && \
+           docker-php-ext-enable pthreads && \
         && docker-php-ext-enable pcntl  \
         && rm -rf /tmp/pear \
         && rm -r /var/lib/apt/lists/*
