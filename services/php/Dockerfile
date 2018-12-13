@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm
 
 ENV PHP_REDIS_VERSION=4.0.0
 
@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
+        libzip-dev  \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 	&& docker-php-ext-install -j$(nproc) gd \
         && docker-php-ext-install zip \
@@ -23,6 +24,8 @@ RUN apt-get update && apt-get install -y \
 #        && docker-php-ext-enable pthreads  \
 #        && pecl install pcntl
 #        && docker-php-ext-enable pcntl  \
+#        && pecl install xdebug-2.6.1 \
+#        && docker-php-ext-enable xdebug \
         && rm -rf /tmp/pear \
         && rm -r /var/lib/apt/lists/*
 
